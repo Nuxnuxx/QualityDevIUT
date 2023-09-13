@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gaetan/but3/qualitedev/HelloWorld/HelloWorld.csproj",
-      "projectName": "HelloWorld",
-      "projectPath": "/home/gaetan/but3/qualitedev/HelloWorld/HelloWorld.csproj",
+      "projectUniqueName": "/home/gaetan/but3/qualitedev/QualityDevIUT/GaetanLittiere/GaetanLittiere.csproj",
+      "projectName": "GaetanLittiere",
+      "projectPath": "/home/gaetan/but3/qualitedev/QualityDevIUT/GaetanLittiere/GaetanLittiere.csproj",
       "packagesPath": "/home/gaetan/.nuget/packages/",
-      "outputPath": "/home/gaetan/but3/qualitedev/HelloWorld/obj/",
+      "outputPath": "/home/gaetan/but3/qualitedev/QualityDevIUT/GaetanLittiere/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/gaetan/.nuget/NuGet/NuGet.Config"
