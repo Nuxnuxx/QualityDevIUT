@@ -22,6 +22,14 @@
         }
       }
 
+      public static Media operator +(Media p_media_first, int p_number_add) {
+        if (p_media_first.stock >= 0 && p_media_first.stock >= p_number_add) {
+          return new Media(p_media_first.title, p_media_first.reference, p_media_first.stock + p_number_add);
+        } else {
+          throw new ArgumentException($"Media can't be added because Stock is not correct or it does'nt exist");
+        }
+      }
+
       public static Media operator -(Media p_media_first, Media p_media_second) {
         if (p_media_first.reference == p_media_first.reference) {
           return new Media(p_media_first.title, p_media_first.reference, p_media_first.stock - p_media_first.stock);
@@ -131,15 +139,38 @@
         }
       }
 
-      public string borrowMedia(string title) {
-        Media mediaToBorrow = LibraryMedia.FirstOrDefault(media => media.title == title);
+      public string borrowMedia(string p_title) {
+        Media mediaBorrow = LibraryMedia.FirstOrDefault(media => media.title == p_title);
 
-        if (mediaToBorrow == null) {
+        if (mediaBorrow == null) {
           return "The media does'nt exist";
         }
+
+        mediaBorrow = mediaBorrow - 1;
+
+        return "Media has been borrowed.";
       }
 
-    }
+      public string returnMedia(string p_title) {
+        Media mediaReturn = LibraryMedia.FirstOrDefault(media => media.title == p_title);
+
+        if (mediaReturn == null) {
+          return "The media does'nt exist";
+        }
+
+        mediaReturn = mediaReturn + 1;
+        return "Media has been returned.";
+      }
+
+      public Media findMedia(string p_title) {
+        Media mediaFind = LibraryMedia.FirstOrDefault(media => media.title == p_title);
+        if (mediaFind == null) {
+          throw new Exception($"media not found with the title ${p_title}");
+        }
+        return mediaFind;
+      }
+
+   }
 
     static void Main(string[] args)
     {
